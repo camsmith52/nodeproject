@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "buildimage": "docker build -t nodeproj:2 .",
+    "deployimage": "docker run -d -p 5000:5000 nodeproj:2",
+    "nodemon": "nodemon server.js"
+    
   },
   "keywords": [],
   "author": "",

@@ -40,3 +40,9 @@
 {"level":"info","message":"loginController","timestamp":"2022-09-19T06:46:48.387Z"}
 {"level":"info","message":"loginController","timestamp":"2022-09-19T06:47:38.289Z"}
 {"level":"info","message":"loginController","timestamp":"2022-09-19T06:48:12.756Z"}
+{"level":"info","message":"response received from api","timestamp":"2022-09-19T12:18:31.290Z"}
+{"level":"info","message":"Invalid status code: User successfully added","timestamp":"2022-09-20T06:23:03.142Z"}
+{"level":"info","message":"User added successfully","timestamp":"2022-09-20T06:24:29.993Z"}
+{"level":"info","message":"User deleted successfully","timestamp":"2022-09-20T06:26:24.881Z"}
+{"level":"info","message":"User updated successfully","timestamp":"2022-09-20T06:27:51.292Z"}
+{"level":"info","message":"User updated successfully","timestamp":"2022-09-20T06:28:58.983Z"}
