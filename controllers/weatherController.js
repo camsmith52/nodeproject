@@ -12,7 +12,7 @@ const weatherController = async (req, res, next) => {
       },
     })
     .then((response) => {
-      res.json(response.data[0].lat); //just returning latitude of country city is in
+      res.json(response.data[0]); //just returning latitude of country city is in
       logger.info("response received from api");
     })
     .catch((err) => {

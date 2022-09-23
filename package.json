@@ -9,7 +9,6 @@
     "buildimage": "docker build -t nodeproj:2 .",
     "deployimage": "docker run -d -p 5000:5000 nodeproj:2",
     "nodemon": "nodemon server.js"
-    
   },
   "keywords": [],
   "author": "",
@@ -27,6 +26,7 @@
     "axios": "^0.27.2",
     "dotenv": "^16.0.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.6.0"
+    "mongoose": "^6.6.0",
+    "morgan": "^1.10.0"
   }
 }

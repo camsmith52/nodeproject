@@ -7,11 +7,13 @@ const loginRoute = require("./routes/login");
 const weatherRoute = require("./routes/weather");
 const usersRoute = require("./routes/users");
 const logger = require("./config/logger");
+const morgan = require('morgan');
 
 require("dotenv").config();
 
 //App initialisation and middleware
 const app = express();
+app.use(morgan('dev'));
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
@@ -32,8 +34,8 @@ app.use("/users", usersRoute);
 app.use("/login", loginRoute);
 app.use("/weather", weatherRoute);
 
-app.get("/error", () => {
-  console.log(" error landing page");
+app.get("/error", (req,res,next) => {
+  res.send(" error landing page");
 });
 
 //Error handling middleware

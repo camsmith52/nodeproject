@@ -1,6 +1,5 @@
 const logger = require("../config/logger");
 const jwt = require("jsonwebtoken");
-const { createLogger } = require("winston");
 require("dotenv").config();
 
 const loginController = async (req, res, next) => {
@@ -20,9 +19,6 @@ const authenticateToken = (req, res, next) => {
   if (token == null) return res.sendStatus(401);
   //token is valid from this point
   jwt.verify(token, process.env.ACCESS_SECRET_TOKEN, (err, user) => {
-    console.log(token);
-    console.log(process.env.ACCESS_SECRET_TOKEN);
-    console.log(user)
     if (err) return res.sendStatus(403); //token didn't match so access is denied with 403 msg
     req.user = user; //user is set to current user
     next();

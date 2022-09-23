@@ -2,7 +2,7 @@ const logger = require("../config/logger");
 let User = require("../models/users.model");
 
 const getController = async (req, res, next) => {
-  res.send("working");
+  
   await User.find()
     .then((users) => {
       res.json(users);

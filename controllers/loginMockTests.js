@@ -1,5 +1,5 @@
-function loginController(username, accesstoken) {
-    return { accesstoken };
+function loginController(username) {
+    return [{username, title: username}]
 }
 
 module.exports= {

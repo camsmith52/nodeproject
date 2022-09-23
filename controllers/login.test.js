@@ -6,8 +6,9 @@ test("login is defined and is a function", () => {
   expect(typeof loginController).toEqual("function");
 });
 
-test("/add route", () => {
-  expect(loginController("frodo",'12345')).toStrictEqual({
-    accesstoken: '12345'
-  });
+test("/login route", () => {
+  expect(loginController("admin")).toStrictEqual([{
+    username: "admin",
+    title: "admin"
+  }]);
 });
