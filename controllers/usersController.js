@@ -8,7 +8,9 @@ const getController = async (req, res, next) => {
       res.json(users);
       logger.info("Users found");
     })
-    .catch((err) => next(err));
+    .catch((err) => {
+      err.type = "not found";
+      next(err)});
 };
 
 const addController = async (req, res, next) => {
@@ -23,7 +25,9 @@ const addController = async (req, res, next) => {
       res.status(200).json(newUser);
       logger.info("User added successfully");
     })
-    .catch((err) => next(err));
+    .catch((err) => {
+      err.type = "enter username and description";
+      next(err)});
 };
 
 const editController = async (req, res, next) => {

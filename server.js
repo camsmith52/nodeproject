@@ -5,6 +5,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const loginRoute = require("./routes/login");
 const weatherRoute = require("./routes/weather");
+const signUpRoute = require("./routes/signUp");
 const usersRoute = require("./routes/users");
 const logger = require("./config/logger");
 const morgan = require('morgan');
@@ -30,6 +31,7 @@ connection.once("open", () => {
 });
 
 //Routes
+app.use("/signUp", signUpRoute);
 app.use("/users", usersRoute);
 app.use("/login", loginRoute);
 app.use("/weather", weatherRoute);
@@ -55,6 +57,14 @@ function errorResponder(error, req, res, next) {
   // if (!res.headers) {
   //   console.log("No headers");
   // }
+  if (error.type == "enter username and description") {
+    res.json().status(401);
+    return;
+  }
+  if (error.type == "not found") {
+    res.json().status(404);
+    return;
+  }
   if (error.type == "redirect") res.redirect("/error");
   else next(error); // forwarding exceptional case to fail-safe middleware
 }
